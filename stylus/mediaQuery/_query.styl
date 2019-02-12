@@ -1,0 +1,64 @@
+@media (max-width: 1024px)
+  .grid-main, .mentions
+    padding-left: gn-space
+    padding-right: gn-space
+
+
+@media (max-width: 768px)
+  //hero
+  .hero
+    height auto
+    padding-bottom: assign-space(1em)
+
+  //productos
+  .products, 
+  .description-product,
+  .item-container,
+  .item-container:nth-of-type(2),
+  .sale-container
+    grid-template-columns: 1fr
+    grid-row-gap: gn-space
+
+  .description-product
+    padding-top: assign-space(3em)
+
+  .product
+    height: auto
+    max-height: auto
+
+  //mensiones
+  .mentions
+    grid-template-columns: 1fr 1fr
+    grid-row-gap: gn-space
+    padding-top: gn-space
+
+  .mentions h2
+    margin:  0
+  
+  // Página de productos
+  .item-container:nth-of-type(2)
+    grid-template-areas: "i-left""i-right"
+    & .item-description
+     grid-area: i-right
+    & figure
+      grid-area: i-left
+
+  //ventas
+  .sale-container, .sale-container .item
+    height: auto
+
+@media (max-width: 480px)
+  .main-title
+    font-size: 1.5em
+
+  .mentions
+    grid-template-columns: 1fr
+  
+  .mentions .mention-item img
+    height 100px
+    object-fit: cover
+
+@media (max-width: 320px)
+    .header
+      height auto
+

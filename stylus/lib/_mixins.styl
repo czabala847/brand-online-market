@@ -1,0 +1,18 @@
+// caja con display de flex, y space-between
+flex-box-content(spacing = justified-default)
+  display: flex
+  align-items: center
+  justify-content: spacing
+  padding: 0 gn-space
+
+//Cajas con display grid nRepeat = numero de columnas, min = ancho minimo, max = ancho maximo
+grid-box-content(nRepeat, min, max)
+  display: grid
+  grid-template-columns: repeat(nRepeat, minmax(min, max))
+
+//Contenedor display grid, 2 columnas, la primera un ancho minimo y la seguna ancho de 1fr
+grid-box-modify(width = width-box-min, gap = gn-space) 
+  display: grid
+  grid-template-columns: minmax(auto, width) 1fr
+  justify-content: center
+  grid-column-gap: gap

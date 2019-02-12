@@ -1,0 +1,123 @@
+
+@import "lib/_variables.styl"
+@import "lib/_mixins.styl"
+@import "lib/_functions.styl"
+
+@import "layout/_site.styl"
+
+@import "base/_links.styl"
+@import "base/_buttons.styl"
+
+@import "components/_grid.styl"
+@import "components/_animations.styl"
+
+
+// contenedores secundarios (hijos)
+
+// li de un menu
+.menu ul li
+  list-style: none
+  display: inline-block
+  padding-left: gn-space
+
+//Titulo principal
+.main-title
+  text-align: center
+  align-self: center
+  font-size: size-principal-title
+
+//Sección de productor
+.products
+  // display: grid
+  // grid-template-columns: repeat(2, minmax(auto, 400px))
+  grid-box-content(2, auto, 400px)
+  grid-column-gap: assign-space(1em)
+  justify-content: center
+
+//Producto
+.product
+  background-color: color-white
+  box-shadow: box-style-shadow
+  padding: gn-space
+  max-height: 350px
+  border-radius: .5em
+
+.product-img
+  text-align: center  
+
+
+//Descripción del producto
+.description
+  text-align: center
+
+.description img
+  height: 100px
+  align-self: center
+
+
+//Menciones
+
+.mentions h2
+  grid-column-start:  1
+  grid-column-end:  -1
+  text-align: center
+  font-size: size-secundary-title
+  margin: assign-space(1em) 0
+
+.mention-item
+  box-shadow: box-style-shadow
+  border-radius: 5px
+  overflow: hidden
+  & img 
+    width 100%
+  & h3, & p
+    margin: 0
+    padding: 0 .5em .8em
+    line-height: 1.3em
+
+// página de productos 
+// productos
+.products-container .main-title
+  text-align: initial
+
+
+.item-container
+  display: grid
+  grid-template-columns: 300px 1fr
+  grid-column-gap: assign-space(1em)
+  align-items: center
+  & figure
+    text-align: center
+    & img 
+      height 200px
+
+.item-container:nth-of-type(2)
+  grid-template-columns: 1fr 300px
+  grid-template-areas: "i-left i-right"
+  & .item-description
+    grid-area: i-left
+  & figure
+    grid-area: i-right
+
+
+// pagina de ventas
+// formulario de pago
+
+.sale-form.item
+  height: auto
+
+.sale-form-container
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: gn-space 0
+    & .field
+      margin-bottom: gn-space
+      padding: .5em 0
+      border-radius: .3em
+      border: 1px solid color-gray-border
+    & .btn
+      margin-top: gn-space
+
+@import "mediaQuery/_query.styl"
+
